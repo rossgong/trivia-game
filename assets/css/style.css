@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here');
+
+
+body {
+	width: 1024px;
+	text-align: center;
+	margin: 0 auto;
+	background: url("../images/cardboard_flat.png");
+	font-family: 'Just Me Again Down Here', cursive;
+}
+
+h1 {
+	font-size: 12vh;
+}
+
+h2 {
+	font-size: 8vh;
+}
+
+button {
+	background-color: darkred;
+	border: 0;
+	font-family: inherit;
+	color: white;
+	padding: 20px;
+}
+
+#trivia-answers-container {
+	text-align: left;
+	font-size: 4vh;
+}
