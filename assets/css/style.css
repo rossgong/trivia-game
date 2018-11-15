@@ -15,17 +15,30 @@ h1 {
 
 h2 {
 	font-size: 8vh;
+	margin: 10px;
 }
 
 button {
-	background-color: darkred;
+	background-color: antiquewhite;
 	border: 0;
 	font-family: inherit;
-	color: white;
+	color: black;
 	padding: 20px;
 }
 
 #trivia-answers-container {
 	text-align: left;
 	font-size: 4vh;
+	display: flex;
+	justify-content: space-around;
+}
+
+.trivia-answer {
+	padding: 15px 0;
+	margin: 5px 0;
+	border: 1px;
+	border-style: solid;
+	border-color: tan;
+	width: 25%;
+	text-align: center;
 }
