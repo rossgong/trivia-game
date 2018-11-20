@@ -22,8 +22,19 @@ button {
 	background-color: antiquewhite;
 	border: 0;
 	font-family: inherit;
+	font-size: 4vh;
 	color: black;
 	padding: 20px;
+}
+
+img {
+	width: 25%;
+	height: 25%;
+}
+
+header {
+	display: flex;
+
 }
 
 #trivia-answers-container {
@@ -54,6 +65,9 @@ button {
 
 
 @media screen and (max-width: 640px) {
+	img {
+		opacity: 0;
+	}
 
     #trivia-answers-container {
 		flex-direction: column;

@@ -155,7 +155,7 @@ var game = {
 		$("#time-remaining").html("")
 		$("#trivia-answers-container").html("Correct: " + this.corrects + "<br>" +
 			"Wrong: " + this.wrongs);
-		$("#trivia-answers-container").append("<br> That's " + (this.corrects * 10) + "%!")
+		$("#trivia-answers-container").append("<br>WOW " + (this.corrects * 10) + "%!")
 
 		//adds a reset button
 		$("<button>").text("Reset").appendTo("#trivia-container").on("click", function (event) {
