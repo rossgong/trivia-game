@@ -25,6 +25,30 @@ var game = {
 			question: "Which country is the most southern?",
 			answers: ["Croatia", "Albania", "Greece", "Macedonia"], answerIndex: 2
 		},
+		{
+			question: "Which is NOT a territory of the United States?",
+			answers: ["Florida", "Puerto Rico", "Wake Island", "Panama Canal"], answerIndex: 3
+		},
+		{
+			question: "Which is a territory of the United Kingdom?",
+			answers: ["St. Helena", "Canada", "Brunei", "Solomon Islands"], answerIndex: 0
+		},
+		{
+			question: "What is the tallest mountain in the contiguous 48 states?",
+			answers: ["Denali", "Mount Whitney", "Mount St. Helens", "Mount Massive"], answerIndex: 1
+		},
+		{
+			question: "Which portugese speaking country has the highest GDP?",
+			answers: ["Portugal", "Brazil", "Angola", "Mozambique"], answerIndex: 1
+		},
+		{
+			question: "Which country has the lowest population?",
+			answers: ["Canada", "Australia", "Spain", "Nigeria"], answerIndex: 1
+		},
+		{
+			question: "Which country does the equator cross?",
+			answers: ["Malaysia", "Rwanda", "Peru", "Indonesia"], answerIndex: 3
+		},
 	],
 
 	intializeGame: function () {
@@ -39,7 +63,6 @@ var game = {
 
 		console.log(this);
 		$("#trivia-question").text(this.questions[questionIndex].question);
-		$()
 
 		//clear out answers container of whatever answers were there previously and store it to add answers in forreach loop
 		var answerContainer = $("#trivia-answers-container").html("");
@@ -65,10 +88,10 @@ var game = {
 		if (game.timeLeft > 0) {
 			game.timeLeft--;
 			game.currentTimeout = setTimeout(game.timeoutFunction, 1000);
+			game.timeRemainingUpdate(game.timeLeft + 1);
 		} else {
 			game.answerQuestion(-1);
 		}
-		game.timeRemainingUpdate(game.timeLeft) + 1;
 	},
 
 	timeRemainingUpdate: function (secs) {
@@ -108,9 +131,6 @@ var game = {
 	nextQuestion: function () {
 		this.currentQuestionIndex++;
 		clearTimeout(this.currentTimeout);
-		console.log("here");
-		console.log($("#time-remaining").html(""));
-		console.log("here2");
 
 		if (this.currentQuestionIndex < this.questions.length) {
 			setTimeout(function () {
@@ -125,13 +145,17 @@ var game = {
 	},
 
 	showCurrentStats: function () {
+		$("#time-remaining").html("")
 		$("#trivia-answers-container").html("Correct: " + this.corrects + "<br>" +
 			"Wrong: " + this.wrongs);
 	},
 
 	showResults: function () {
 		$("#trivia-question").html("WOW that was fast<br>Let's see how ya did!");
-		this.showCurrentStats();
+		$("#time-remaining").html("")
+		$("#trivia-answers-container").html("Correct: " + this.corrects + "<br>" +
+			"Wrong: " + this.wrongs);
+		$("#trivia-answers-container").append("<br> That's " + (this.corrects * 10) + "%!")
 
 		//adds a reset button
 		$("<button>").text("Reset").appendTo("#trivia-container").on("click", function (event) {

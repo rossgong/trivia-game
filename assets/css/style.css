@@ -36,9 +36,30 @@ button {
 .trivia-answer {
 	padding: 15px 0;
 	margin: 5px 0;
-	border: 1px;
-	border-style: solid;
-	border-color: tan;
+	border: 3px;
+	border-style: dashed;
+	border-color: green;
 	width: 25%;
 	text-align: center;
+	margin: 10px 10px;
+	color: darkslategray;
+}
+
+
+@media screen and (max-width: 1024px) {
+	body {
+		width: unset;
+	}
+}
+
+
+@media screen and (max-width: 640px) {
+
+    #trivia-answers-container {
+		flex-direction: column;
+	}
+
+	.trivia-answer {
+		width: 100%;
+	}
 }
